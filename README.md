@@ -3,47 +3,37 @@
 
 # Google Firebase Analytics Cordova Plugin
 
-#### Set Analytics Enable or Disable
+### Set Analytics Enable or Disable
 
 ```javascript
 FirebaseCompletePlugin.setAnalyticsCollectionEnabled(function(enable){ //if true means enable, false means not enable
   
 });
+```
 
-#### Log Events for analytics.
+### Log Events for analytics.
 
-FirebaseCompletePlugin.prototype.logEvent = function (name, params, success, error) {
-    exec(success, error, "FirebaseComplete", "logEvent", [name, params]);
-};
+```javascript
+FirebaseCompletePlugin.logEvent(function(name,message){
+  
+});
+```
 
-#### Log Errors for analytics.
+### Log Errors for analytics.
 
-FirebaseCompletePlugin.prototype.logError = function (name, params, success, error) {
-    exec(success, error, "FirebaseComplete", "logError", [name, params]);
-};
+```javascript
+FirebaseCompletePlugin.logError(function(name,errors){
+  
+});
+```
 
 # Google Firebase Cloud Messaging Cordova Push Plugin
 > Extremely easy plug&play push notification plugin for Cordova applications with Google Firebase FCM.
-
 
 ## Authorship
 This is a fork from https://github.com/fechanique/cordova-plugin-fcm & https://github.com/andrehtissot/cordova-plugin-fcm-with-dependecy-updated with improvements.
 
 This fork has its google and firebase dependencies versions defined, which is necessary to avoid cordova build errors.
-
-#### Checking for permissions
-Useful for IOS. On android, it will always return `true`.
-
-```javascript
-FirebaseCompletePlugin.hasPermission(function(doesIt){
-    // doesIt === true => yes, push was allowed
-    // doesIt === false => nope, push will not be available
-    // doesIt === null => still not answered, recommended checking again later
-    if(doesIt) {
-        haveFun();
-    }
-});
-```
 
 - Tested on Android and iOS using Cordova cli 6.4.0, Cordova android 6.0.0 and Cordova ios 4.3.1
 - Available sdk functions: onTokenRefresh, getToken, subscribeToTopic, unsubscribeFromTopic and onNotification
@@ -76,6 +66,19 @@ Put the downloaded file 'GoogleService-Info.plist' in the Cordova project root f
 :warning: It's highly recommended to use REST API to send push notifications because Firebase console does not have all the functionalities. **Pay attention to the payload example in order to use the plugin properly**.  
 You can also test your notifications with the free testing server: https://cordova-plugin-fcm.appspot.com
 
+#### Checking for permissions
+Useful for IOS. On android, it will always return `true`.
+
+```javascript
+FirebaseCompletePlugin.hasPermission(function(doesIt){
+    // doesIt === true => yes, push was allowed
+    // doesIt === false => nope, push will not be available
+    // doesIt === null => still not answered, recommended checking again later
+    if(doesIt) {
+        haveFun();
+    }
+});
+```
 ### Receiving Token Refresh
 
 ```javascript
