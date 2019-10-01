@@ -5,10 +5,6 @@ function FirebaseCompletePlugin() {
     console.log("FirebaseCompletePlugin is created");
 }
 
-FirebaseCompletePlugin.prototype.initialize = function (param, success, error) {
-    exec(success, error, "FirebaseComplete", 'initialize', [param]);
-}
-
 // ****************************** NOTIFICATIONS MODULE STARTS ******************************
 
 // CHECK FOR PERMISSION

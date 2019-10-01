@@ -1,8 +1,10 @@
-#import <Cordova/CDV.h>
+#import <UIKit/UIKit.h>
+#import <Cordova/CDVPlugin.h>
 
-@interface FirebaseComplete : CDVPlugin
+@interface FirebaseComplete : CDVPlugin{
+    
+}
 + (FirebaseComplete *) firebaseComplete;
-- (void)initialize:(CDVInvokedUrlCommand*)command;
 - (void)hasPermission:(CDVInvokedUrlCommand*)command;
 - (void)getToken:(CDVInvokedUrlCommand*)command;
 - (void)subscribeToTopic:(CDVInvokedUrlCommand*)command;
