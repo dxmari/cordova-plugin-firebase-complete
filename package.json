@@ -1,6 +1,6 @@
 {
   "name": "cordova-plugin-firebase-complete",
-  "version": "1.0.0",
+  "version": "1.0.2",
   "cordova": {
     "id": "cordova-plugin-firebase-complete",
     "platforms": [
@@ -11,10 +11,26 @@
   "keywords": [
     "ecosystem:cordova",
     "cordova-android",
-    "cordova-ios"
+    "cordova-ios",
+    "notifications",
+    "push",
+    "firebase",
+    "fcm",
+    "ios",
+    "android",
+    "cordova"
   ],
+  "bugs": {
+    "url": "https://github.com/dxmari/cordova-plugin-firebase-complete/issues"
+  },
+  "cordova_name": "Cordova Firebase Plugin",
   "_spec": "2.2.3",
   "author": "Mariselvam",
   "license": "ISC",
-  "description": ""
+  "description": "",
+  "repo": "",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dxmari/cordova-plugin-firebase-complete.git"
+  }
 }

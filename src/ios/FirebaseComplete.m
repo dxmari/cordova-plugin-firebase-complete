@@ -15,13 +15,18 @@
 static BOOL notificatorReceptorReady = NO;
 static BOOL appInForeground = YES;
 
-static NSString *notificationCallback = @"FirebaseComplete.onNotificationReceived";
-static NSString *tokenRefreshCallback = @"FirebaseComplete.onTokenRefreshReceived";
+static NSString *notificationCallback = @"FirebaseCompletePlugin.onNotificationReceived";
+static NSString *tokenRefreshCallback = @"FirebaseCompletePlugin.onTokenRefreshReceived";
 static FirebaseComplete *firebaseCompleteInstance;
 
 + (FirebaseComplete *) firebaseComplete {
     
     return firebaseCompleteInstance;
+}
+
+- (void)pluginInitialize {
+    NSLog(@"Starting Firebase plugin");
+    firebaseComplete = self;
 }
 
 - (void)initialize:(CDVInvokedUrlCommand*)command

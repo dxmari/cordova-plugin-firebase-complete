@@ -1,8 +1,10 @@
 <?xml version='1.0' encoding='utf-8'?>
-<plugin id="cordova-plugin-firebase-complete" version="1.0.0" 
+<plugin id="cordova-plugin-firebase-complete" version="1.0.2" 
     xmlns="http://apache.org/cordova/ns/plugins/1.0" 
     xmlns:android="http://schemas.android.com/apk/res/android">
-    <name>FirebaseComplete</name>
+    <name>Cordova Firebase Complete Plugin</name>
+    <description>A Complete Firebase Features include in this Cordova Plugin.</description>
+    <keywords>analytics, notifications, push, firebase, fcm, ios, android, cordova, plugin</keywords>
     <js-module name="FirebaseCompletePlugin" src="www/firebase-complete.js">
         <clobbers target="FirebaseCompletePlugin" />
     </js-module>
@@ -48,10 +50,18 @@
                 <param name="ios-package" value="FirebaseComplete" />
             </feature>
         </config-file>
+         <!-- ENABLE PUSH CAPABILITY -->
+        <config-file parent="aps-environment" target="*/Entitlements-Debug.plist">
+            <string>development</string>
+        </config-file>
+        <config-file parent="aps-environment" target="*/Entitlements-Release.plist">
+            <string>production</string>
+        </config-file>
+        
+        <resource-file src="src/ios/GoogleService-Info.plist" target="Resources/GoogleService-Info.plist" />
+
         <source-file src="src/ios/FirebaseComplete.h" />
         <source-file src="src/ios/FirebaseComplete.m" />
-
-        <resource-file src="src/ios/GoogleService-Info.plist" target="Resources/GoogleService-Info.plist" />
 
         <header-file src="src/ios/AppDelegate+FCMPlugin.h" />
         <source-file src="src/ios/AppDelegate+FCMPlugin.m" />
